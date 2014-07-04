@@ -12,7 +12,7 @@ import java.util.Properties;
 public class PropertiesReader {
     static Logger logger = Logger.getLogger(PropertiesReader.class);
     Properties projectProperties = new Properties();
-    public PropertiesReader(){
+    public PropertiesReader(){ //todo: К теме сложной логики в конструкторе. Имеет ли смысл под каждый тип(pdf, html, txt etc.) создавать свой файл properties?
         InputStream input = null;
         try {
             input = Main.class.getClassLoader().getResourceAsStream(Main.PROPERTIES_FILE);
@@ -30,8 +30,11 @@ public class PropertiesReader {
         }
     }
 
-      public String getReGex () {
+    public String getReGex () {
         return projectProperties.getProperty("regexMask");
-      }
+    }
+    public String pathToFile() {
+        return projectProperties.getProperty("pathToTextFile");
+    }
 
 }
