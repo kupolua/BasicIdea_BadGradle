@@ -30,10 +30,8 @@ public class PropertiesReader {
         }
     }
 
-      public Integer getReGex () {
-//      public String getReGex () {
-        return 1;
-//        return projectProperties.getProperty("regexMask");
+      public String getReGex () {
+        return projectProperties.getProperty("regexMask");
       }
 
 }
